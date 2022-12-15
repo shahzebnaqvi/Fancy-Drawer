@@ -230,7 +230,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-final ZoomDrawerController z = ZoomDrawerController();
+final ZoomDrawerController za = ZoomDrawerController();
 
 class Zoom extends StatefulWidget {
   const Zoom({Key? key}) : super(key: key);
@@ -243,14 +243,14 @@ class _ZoomState extends State<Zoom> {
   @override
   Widget build(BuildContext context) {
     return ZoomDrawer(
-      controller: z,
+      controller: za,
       borderRadius: 24,
       style: DrawerStyle.defaultStyle,
       // showShadow: true,
       openCurve: Curves.fastOutSlowIn,
       slideWidth: MediaQuery.of(context).size.width * 0.65,
       duration: const Duration(milliseconds: 500),
-      showShadow: false,
+      showShadow: true,
       // angle: -30.0,
       angle: 0.0,
       menuBackgroundColor: Colors.indigo,
@@ -370,7 +370,8 @@ class _TwoPanelsState extends State<TwoPanels> with TickerProviderStateMixin {
             leading: IconButton(
               icon: const Icon(Icons.menu),
               onPressed: () {
-                z.toggle!();
+                za.toggle!();
+                // z.open!();
               },
             ),
             bottom: TabBar(
